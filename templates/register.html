@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/registration.css">
+    <script src="./js/registration.js"></script>
+</head>
+
+<body>
+    <header>
+        <center>
+            <div>
+                <img src="static/img/logo.jpg" alt="CDOT LOGO">
+            </div>
+            <div class="nav">
+                <button class="value"><a href="{{ url_for('index') }}" class="nostyle">HOME</a></button>
+                <button class="value"><a href="{{ url_for('register_page') }}" class="nostyle">REGISTER</a></button>
+            </div>
+        </center>
+    </header>
+
+    <center>
+        <form id="registrationForm" class="form" action="/register" method="post">
+            <p class="title">REGISTER TO PLAY </p>
+            <p class="message">ENTER A TEAM OR INDIVIDUAL ENROLLMENT </p>
+        
+            <label>
+                <select id="registrationType" required class="input">
+                    <option value="" disabled selected></option>
+                    <option value="individual">Individual</option>
+                    <option value="team">Team</option>
+                </select>
+                <span>Select Registration Type</span>
+            </label>
+            
+            <div class="flex">
+                <label>
+                    <input required="" placeholder="" type="text" id="firstname" class="input">
+                    <span>Firstname</span>
+                </label>
+        
+                <label>
+                    <input required="" placeholder="" type="text" id="lastname" class="input">
+                    <span>Lastname</span>
+                </label>
+            </div>  
+                    
+            <label>
+                <input required="" placeholder="" type="email" id="email" class="input">
+                <span>Email</span>
+            </label> 
+                
+            <!-- This will be toggled based on the registration type -->
+            <label id="individualNameLabel" style="display:none;">
+                <input placeholder="" type="text" id="individualName" class="input">
+                <span>Individual Name</span>
+            </label>
+        
+            <label id="teamNameLabel" style="display:none;">
+                <input placeholder="" type="text" id="teamName" class="input">
+                <span>Team Name</span>
+            </label>
+        
+            <button type="submit" class="submit">Submit</button>
+            <p class="signin">This information will be stored in our database </p>
+        </form>
+    </center>
+
+    <div id="notification" style="display:none; color: green; font-weight: bold;">
+        Registration successful! Thank you for registering.
+    </div>
+
+    <!-- JavaScript code to toggle visibility -->
+    <script>
+        document.getElementById('registrationType').addEventListener('change', function() {
+            const individualNameLabel = document.getElementById('individualNameLabel');
+            const teamNameLabel = document.getElementById('teamNameLabel');
+
+            if (this.value === 'individual') {
+                individualNameLabel.style.display = 'block';
+                teamNameLabel.style.display = 'none';
+                document.getElementById('individualName').required = true;
+                document.getElementById('teamName').required = false;
+            } else if (this.value === 'team') {
+                individualNameLabel.style.display = 'none';
+                teamNameLabel.style.display = 'block';
+                document.getElementById('individualName').required = false;
+                document.getElementById('teamName').required = true;
+            } else {
+                individualNameLabel.style.display = 'none';
+                teamNameLabel.style.display = 'none';
+                document.getElementById('individualName').required = false;
+                document.getElementById('teamName').required = false;
+            }
+        });
+    </script>
+</body>
+
+<footer>
+    <img src="static/img/footer.jpg" alt="">
+    <p class="nostyle3">&copy; 2024</p>
+</footer>
+</html>
