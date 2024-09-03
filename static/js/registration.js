@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Capture form data
         const formData = {
             registrationType: document.getElementById('registrationType').value,
+            division: document.getElementById('division').value,
             firstname: document.getElementById('firstname').value,
             lastname: document.getElementById('lastname').value,
             email: document.getElementById('email').value,
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(result => {
-            window.location.href = "/confirmation.html"; // Redirect to confirmation page
+            window.location.href = "confirmation"; // Redirect to confirmation page
         })
         .catch(error => {
             console.error('Error:', error);

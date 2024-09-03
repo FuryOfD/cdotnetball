@@ -35,9 +35,9 @@ def register():
         with open('registrations.csv', mode='a', newline='') as file:
             writer = csv.writer(file)
             if data['registrationType'] == 'team':
-                writer.writerow(['TEAM-'+data['teamName'],data['firstname'], data['lastname'], data['email']])
+                writer.writerow(['TEAM-'+data['teamName'],data['division'],data['firstname'], data['lastname'], data['email']])
             else:
-                writer.writerow(['INDV-'+data['individualName'],data['firstname'], data['lastname'], data['email']])
+                writer.writerow(['INDV-'+data['individualName'],data['division'],data['firstname'], data['lastname'], data['email']])
 
         return jsonify({'message': 'Registration successful'}), 200
     else:
