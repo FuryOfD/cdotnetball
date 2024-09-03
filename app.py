@@ -35,17 +35,24 @@ def register():
         with open('registrations.csv', mode='a', newline='') as file:
             writer = csv.writer(file)
             if data['registrationType'] == 'team':
-                writer.writerow(['TEAM-'+data['teamName'],data['division'],data['firstname'], data['lastname'], data['email']])
+                writer.writerow(['TEAM-' + data['teamName'], data['division'], data['firstname'], data['lastname'], data['email']])
             else:
-                writer.writerow(['INDV-'+data['individualName'],data['division'],data['firstname'], data['lastname'], data['email']])
+                writer.writerow(['INDV-' + data['individualName'], data['division'], data['firstname'], data['lastname'], data['email']])
 
         return jsonify({'message': 'Registration successful'}), 200
     else:
         return jsonify({'message': 'Invalid content type'}), 415  # 415 Unsupported Media Type
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
+# Define the WSGI application function
 def application(environ, start_response):
-    app.run(debug=False)
+    """
+    WSGI entry point. This function is called by the WSGI server.
+    """
+    # Call the Flask app as the WSGI application
+    return app(environ, start_response)
+
+
+if __name__ == '__main__':
+    # Use the WSGI application for development when running directly
+    app.run(debug=True)
