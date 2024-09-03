@@ -15,71 +15,138 @@
                 <img src="static/img/logo.jpg" alt="CDOT LOGO">
             </div>
             <div class="nav">
-                <button class="value"><a href="{{ url_for('index') }}" class="nostyle">HOME</a></button>
-                <button class="value"><a href="{{ url_for('register_page') }}" class="nostyle">REGISTER</a></button>
-            </div>
+                <a href="{{ url_for('index') }}" class="nostyle">
+                  <button class="value">HOME</button>
+                </a>
+                <a href="{{ url_for('register_page') }}" class="nostyle">
+                  <button class="value">REGISTER</button>
+                </a>
+              </div>
         </center>
 
     </header>
     <body>
         <center>
-            <div>
-                <h1>Welcome to CDOT Netball!
-                </h1>
-            </div>
-        
-
-        <!-- <div class="break"></div> -->
-
         <div class="frame">
+        </div>
+
+        <div>
+            <h1>THE ANNUAL CDOT NETBALL TOURNAMENT IS AROUND THE CORNER!
+            </h1>
+            <h2>HERE IS WHAT YOU NEED TO KNOW</h2> 
+        </div>
+
+        <div class="grid-item">
             <p>
-                THE ANNUAL CDOT NETBALL TOURNAMENT IS AROUND THE CORNER!
-                <br>
-
-                FROM THE 25TH TO THE 26TH OF OCTOBER, 
-                THE CDOT NETBALL TOURNAMENT WILL BE HELD LAERSKOOL FAIRLANDS @ 16:00.
-
-                <br>
-
-                ALL TEAMS ARE WELCOME TO PARTICIPATE IN THIS TOURNAMENT.
-                
+                FROM THE 25TH TO THE 26TH OF OCTOBER (WILL DETERMINE WHETHER OR NOT, THE 
+                TOURNAMENT WILL TAKE PLACE OVER THE COURSE OF 2 DAYS OR 1 DAY)
+                <br><br>
+                THE CDOT NETBALL TOURNAMENT WILL BE TAKING PLACE AT LAERSKOOL FAIRLANDS 
+                AND AT CLIFFVIEW PRIMARY SCHOOL.
+                <br><br>
+                ANY TEAMS AND INDIVIDUALS ARE WELCOME TO JOIN IN THE FUN AND COMPETE IN THE TOURNAMENT.
             </p>
+            <div class="frame2">
+            </div>
         </div>
 
-        <div class="gridstyle">
-            <div class="griditem">
-                <div class="frame">
-                    <img src="static/img/foto10.jpg" alt="">
-                </div>
+        <div class="grid-item">
+            <table>
+                <caption>TOURNAMENT DETAILS</caption>                  
+                <tbody>
+                    <tr>
+                        <td> 
+                            <strong>Netball Division:</strong> 
+                        </td>
+                        <td>
+                            Serious or Leisure play for all age groups<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Netball Rules:</strong> 
+                        </td>
+                        <td>
+                            Specific rules for each division including team size, match duration, and age restrictions.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Tournament Prizes:</strong> 
+                        </td>
+                        <td>
+                            Trophies, medals, and rewards for best dressed off and on the court.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Entry Fee:</strong> 
+                        </td>
+                        <td>
+                            R350 pp, Certain number of players for team enrolment<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Entries:</strong> 
+                        </td>
+                        <td>
+                            Submit your team entry by the 23rd of September.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Kit Orders:</strong> 
+                        </td>
+                        <td>
+                            Custom team kits available. Order by September 20th.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Collecting of T-Shirts:</strong> 
+                        </td>
+                        <td>
+                            T-Shirts will be available for collection on 24th of October, at Cliffview Primary from 16:00.<br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
-            </div>
-
-            <div class="griditem">
-                <a href="{{ url_for('register_page') }}" class="nostyle2">
-                    <button class="button">
-                      <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
-                        <path
-                          clip-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                          fill-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>READY TO PLAY?</span>
-                    </button>
-                  </a>
-            </div>
-
-            <div class="griditem"> 
-                <div class="frame">
-                    <img src="static/img/foto9.jpg" alt="">
-                </div>
+            <a href="{{ url_for('register_page') }}" class="nostyle2">
+                <button class="button">
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>LEARN MORE</span>
+                </button>
+              </a>
         </div>
 
-
+        <div>
+            <h2>READY TO PLAY?</h2>
+            <a href="{{ url_for('register_page') }}" class="nostyle2">
+                <button class="button">
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                    <path
+                      clip-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                  <span>REGISTER</span>
+                </button>
+              </a>
+        </div>
         </center>
+        <br>
     </body>
     <footer>
         <img src="static/img/footer.jpg" alt="">
-        <p class="nostyle3">&copy; 2024</p>
+        <p class="nostyle2">&copy; 2024</p>
     </footer>
 </html>

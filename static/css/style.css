@@ -15,7 +15,7 @@ html, body{
 
 .nostyle{
     text-decoration: none;
-    color: #063970;
+    color: inherit;
 }
 
 .nostyle2{
@@ -34,21 +34,20 @@ html, body{
   width: fit-content;
   background-color: #ffffff;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
   gap: 7.5px;
-  color: #ffffff;
+  color: #063970;
 }
 
 .value {
-    background-color: transparent;
-    border: none;
-    padding: 10px;
-    color: white;
-    display: flex;
-    position: relative;
-    gap: 5px;
-    cursor: pointer;
-    border-radius: 4px;
+  background-color: #ffffff; /* Button background color */
+  color: #063970;              /* Text color */
+  padding: 10px 20px;        /* Padding to make the button more visible */
+  border: none;              /* Removes default border */
+  font-size: 16px;           /* Ensures text is visible */
+  border-radius: 5px;        /* Rounded corners */
+  cursor: pointer; 
     transition: all 0.2s ease;
   }
 
@@ -60,7 +59,7 @@ html, body{
 .value:focus,
 .value:active {
   background-color: #ffffff;
-  outline-style: none;
+  outline-style: solid;
   outline-color: #063970;
 }
 
@@ -82,12 +81,29 @@ html, body{
 }
 
 footer{
-  display: flex;
-  align-items: center;
-  align-content:center;
+  text-align: center;
+  padding: 10px;
+  background-color: #063970;
+  color: white;
 }
 
 footer img{
-  margin-right: 10px;
+  width : 50%;
+  height: 250px;
+  border-radius: 10px; /* Rounded corners */
+}
+
+header{
+  text-align: center;
+  padding: 10px;
+  background-color: #063970;
+  color: white;
+}
+
+img{
+  width: 50%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners */
+  
 }
 

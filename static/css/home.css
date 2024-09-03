@@ -1,44 +1,86 @@
-.gridstyle {
-    width: 1000px;
-    height: 800px;
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1px;
-  }
-  
-  .gridstyle .griditem {
-    border-radius: 5px;
-    width: 100%;  /* Adjusted to use the full width of the grid cell */
-    height: 50%;  /* Adjusted to use the full height of the grid cell */
-    display: flex;
-    flex-direction: column;  /* Stack the image and paragraph vertically */
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;  /* Hide any overflow that might be causing layout issues */
-  }
-  
-  .griditem img {
-    max-width: 110%;  /* Ensure the image scales within the grid item */
-    height: auto;
-    border-radius: 10px;
- 
-    transition: transform 0.5s;
-    transition-timing-function: cubic-bezier(0.4, 1.55, 0.74, 0.55);
-  }
+.frame{
+  background-image: url('/static/img/foto10.jpg');
+  background-size: cover;      /* Make the background image cover the element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center;  /* Center the image */
+  height: 500px;                /* Set a height for the div */
+  width: 100%;  
+}
 
-    .griditem img:hover {
-        transform: scale(1.5);
-    }
-  
-  .griditem p {
-    margin-top: 15px;
-    font-size: 20px;  /* Adjust as needed */
-    text-align: center;
-    color: white;
-    flex-shrink: 1;  /* Prevent paragraph from shrinking too much */
-  }
+.frame2{
+  background-image: url('/static/img/foto8.jpg');
+  background-size: cover;      /* Make the background image cover the element */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center;  /* Center the image */
+  height: 300px;                /* Set a height for the div */
+  width: 100%;  
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap : 10px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.grid-item {
+  padding: 10px;
+  background-color: #ffffff; /* Background color for each item */
+  border-radius: 4px; /* Rounded corners for each item */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted look */
+}
+
+.grid-item:nth-child(-n+4) {
+  font-weight: bold; /* Bold font for header items */
+  background-color: transparent; /* Transparent background for header items */
+  box-shadow: none; /* Remove shadow from header items */
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  table-layout: auto;
+  width: auto;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top; /* Ensures content aligns to the top of the cell */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+caption {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Style for the image */
+.image-cell img {
+  width: 50%; /* Ensures the image fits within the cell */
+  height: auto;
+  border-radius: 8px; /* Optional: Adds rounded corners to the image */
+  display: block; /* Ensures the image behaves like a block-level element */
+}
+
+tr .last-row{
+  text-align: right;
+  align-items: center;  
+}
 
 
 .button {
@@ -48,7 +90,8 @@
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
     background-color: rgb(6,57,112);
-    border-radius: 9999px;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +104,7 @@
     overflow: hidden;
     font-size: 15px;
   }
-  
+
   .icon {
     width: 24px;
     height: 24px;
