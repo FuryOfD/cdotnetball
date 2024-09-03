@@ -1,0 +1,136 @@
+.slideshow-container {
+    max-width: 700px;
+    position: relative;
+    margin: auto;
+    background: #063970;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.slideshow-container::before {
+    content: '';
+    position: absolute;
+    top: 0;  /* Ensure the animation starts at the top of the container */
+    left: 0; /* Ensure the animation starts at the left of the container */
+    width: 100%;  /* Cover the entire width of the container */
+    height: 100%;  /* Cover the entire height of the container */
+    background-image: linear-gradient(180deg, rgb(255, 255, 255, 0.3), rgb(255, 255, 255, 0.3)); /* Transparent gradient */
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+    z-index: 1; /* Keep it below the content */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.slideshow-container::after{
+    content: '';
+    position: absolute;
+    background: #063970;
+    inset: 5px;
+    border-radius: 15px;
+    z-index: 2; /* Ensure it's above the rotating animation */
+}
+
+.slides {
+    display: none;
+    padding: 10px;
+    z-index: 3; /* Ensure it's above everything else */
+    position: relative; /* Keep content in normal flow */
+}
+
+.active {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3; /* Ensure arrows are above everything */
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+    color: #ffffff;
+    font-size: 18px;
+    padding: 8px 12px;
+    text-align: left;
+    z-index: 3; /* Ensure text is above everything */
+}
+
+.image {
+    text-align: center;
+    margin-bottom: 15px;
+    z-index: 3; /* Ensure images are above everything */
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    z-index: 3; /* Ensure images are above everything */
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+
+table {
+    width: 100%; /* Make the table take the full width of the container */
+    border-collapse: collapse; /* Make sure borders are not doubled */
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Add a bottom border to rows */
+    color: #ffffff; /* Set text color to white */
+}
+
+th {
+    background-color: #063970; /* Header background color */
+}
+
+td {
+    background-color: #0a4b93; /* Cell background color */
+}
+
+h4 {
+    margin-bottom: 10px;
+}
+
+
