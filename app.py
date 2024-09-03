@@ -19,22 +19,26 @@ def register_page():
 def confirmation_page():
     return render_template('confirmation.html')
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['POST'])
 def register():
-    if request.method == 'GET':
-        return render_template('register.html')
-    elif request.method == 'POST':
-        data = request.json  # Get the data from the POST request
+    if request.is_json:
+        data = request.get_json()  # Get the JSON data from the POST request
+
+        # Print the data for debugging
+        print(data)
 
         # Determine registration type and write to CSV accordingly
         with open('registrations.csv', mode='a', newline='') as file:
             writer = csv.writer(file)
             if data['registrationType'] == 'team':
-                writer.writerow([data['firstname'], data['lastname'], data['email'], data['teamName']])
+                writer.writerow(['TEAM-'+data['teamName'],data['firstname'], data['lastname'], data['email']])
             else:
-                writer.writerow([data['firstname'], data['lastname'], data['email'], data['individualName']])
+                writer.writerow(['INDV-'+data['individualName'],data['firstname'], data['lastname'], data['email']])
 
         return jsonify({'message': 'Registration successful'}), 200
+    else:
+        return jsonify({'message': 'Invalid content type'}), 415  # 415 Unsupported Media Type
+
 
 if __name__ == '__main__':
     app.run(debug=True)

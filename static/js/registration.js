@@ -11,6 +11,8 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         teamName: document.getElementById('teamName').value
     };
 
+    console.log(formData);
+
     // Send data to backend via POST request
     fetch('/register', {
         method: 'POST',
@@ -21,7 +23,9 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     })
     .then(response => response.json())
     .then(result => {
-        alert('Registration successful!');
+        console.log('Success:', result);
+        //alert('Registration successful!');
+        window.location.href = '/confirmation';
     })
     .catch(error => {
         console.error('Error:', error);
