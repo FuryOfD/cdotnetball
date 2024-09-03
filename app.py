@@ -46,3 +46,6 @@ def register():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+def application(environ, start_response):
+    app.run(debug=False)
