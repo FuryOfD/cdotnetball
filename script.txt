@@ -1,1 +1,1 @@
-pip install flask && python -u "app.py"
+flask
