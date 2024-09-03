@@ -19,6 +19,10 @@ def register_page():
 def confirmation_page():
     return render_template('confirmation.html')
 
+@app.route('/info')
+def info_page():
+    return render_template('info.html')
+
 @app.route('/register', methods=['POST'])
 def register():
     if request.is_json:
