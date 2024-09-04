@@ -1,13 +1,13 @@
-import os
-import sys
+from flask import Flask
 
+# Create a Flask application instance
+application = Flask(__name__)
 
-sys.path.insert(0, os.path.dirname(__file__))
+# Define a route for the root URL ('/')
+@application.route('/')
+def hello_world():
+    return 'Hello, World!'
 
-
-def application(environ, start_response):
-    start_response('200 OK', [('Content-Type', 'text/plain')])
-    message = 'It works!\n'
-    version = 'Python %s\n' % sys.version.split()[0]
-    response = '\n'.join([message, version])
-    return [response.encode()]
+# Run the application if this script is executed directly
+if __name__ == '__main__':
+    application.run(debug=True)
