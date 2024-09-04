@@ -3,31 +3,29 @@ import csv
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(__file__))
+application = Flask(__name__)
 
-app = Flask(__name__)
-
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('home.html')
 
-@app.route('/home')
+@application.route('/home')
 def home_page():
     return render_template('home.html')
 
-@app.route('/register')
+@application.route('/register')
 def register_page():
     return render_template('register.html')
 
-@app.route('/confirmation')
+@application.route('/confirmation')
 def confirmation_page():
     return render_template('confirmation.html')
 
-@app.route('/info')
+@application.route('/info')
 def info_page():
     return render_template('info.html')
 
-@app.route('/register', methods=['POST'])
+@application.route('/register', methods=['POST'])
 def register():
     if request.is_json:
         data = request.get_json()  # Get the JSON data from the POST request
@@ -47,15 +45,6 @@ def register():
     else:
         return jsonify({'message': 'Invalid content type'}), 415  # 415 Unsupported Media Type
 
-
-# Define the WSGI application function
-def application(environ, start_response):
-    """
-    WSGI entry point. This function is called by the WSGI server.
-    """
-    # Call the Flask app as the WSGI application
-    return app(environ, start_response)
-
 if __name__ == '__main__':
     # Use the WSGI application for development when running directly
-    app.run(debug=True)
+    application.run(debug=True)
