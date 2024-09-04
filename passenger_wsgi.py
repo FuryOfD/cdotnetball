@@ -1,13 +1,61 @@
+from flask import Flask, render_template, request, jsonify
+import csv
 import os
 import sys
 
-
 sys.path.insert(0, os.path.dirname(__file__))
 
+application = Flask(__name__)
 
+@application.route('/')
+def index():
+    return render_template('home.html')
+
+@application.route('/home')
+def home_page():
+    return render_template('home.html')
+
+@application.route('/register')
+def register_page():
+    return render_template('register.html')
+
+@application.route('/confirmation')
+def confirmation_page():
+    return render_template('confirmation.html')
+
+@application.route('/info')
+def info_page():
+    return render_template('info.html')
+
+@application.route('/register', methods=['POST'])
+def register():
+    if request.is_json:
+        data = request.get_json()  # Get the JSON data from the POST request
+
+        # Print the data for debugging
+        print(data)
+
+        # Determine registration type and write to CSV accordingly
+        with open('registrations.csv', mode='a', newline='') as file:
+            writer = csv.writer(file)
+            if data['registrationType'] == 'team':
+                writer.writerow(['TEAM-' + data['teamName'], data['division'], data['firstname'], data['lastname'], data['email']])
+            else:
+                writer.writerow(['INDV-' + data['individualName'], data['division'], data['firstname'], data['lastname'], data['email']])
+
+        return jsonify({'message': 'Registration successful'}), 200
+    else:
+        return jsonify({'message': 'Invalid content type'}), 415  # 415 Unsupported Media Type
+
+
+# Define the WSGI applicationlication function
 def application(environ, start_response):
-    start_response('200 OK', [('Content-Type', 'text/plain')])
-    message = 'It works!\n'
-    version = 'Python %s\n' % sys.version.split()[0]
-    response = '\n'.join([message, version])
-    return [response.encode()]
+    """
+    WSGI entry point. This function is called by the WSGI server.
+    """
+    # Call the Flask application as the WSGI applicationlication
+    return application(environ, start_response)
+
+if __name__ == '__main__':
+    # Use the WSGI applicationlication for development when running directly
+    application.run(debug=True)
