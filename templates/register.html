@@ -1,132 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
     <title>Registration</title>
-    <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/registration.css">
-    
-</head>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/registration.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <center>
-            <div>
-                <img src="static/img/logo.jpg" alt="CDOT LOGO">
-            </div>
-            <br>
-            <div class="nav">
-                <a href="{{ url_for('index') }}" class="nostyle1"><button class="value">HOME</button></a>
-                <a href="{{ url_for('register_page') }}" class="nostyle1"><button class="value">REGISTER</button></a>
-                <a href="{{ url_for('info_page') }}" class="nostyle">
-                    <button class="value">INFO</button>
-                </a>
-            </div>
-        </center>
+      <center>
+        <div>
+          <img src="static/img/logo.jpg" alt="CDOT LOGO" />
+        </div>
+        <br />
+        <div class="nav">
+          <a href="{{ url_for('index') }}" class="nostyle1"
+            ><button class="value">HOME</button></a
+          >
+          <a href="{{ url_for('register_page') }}" class="nostyle1"
+            ><button class="value">REGISTER</button></a
+          >
+          <a href="{{ url_for('info_page') }}" class="nostyle">
+            <button class="value">INFO</button>
+          </a>
+        </div>
+      </center>
     </header>
 
     <center>
-        <form id="registrationForm" class="form">
-            <p class="title">REGISTER TO PLAY </p>
-            <p class="message">ENTER A TEAM OR INDIVIDUAL ENROLLMENT </p>
-        
-            <label>
-                <select id="registrationType" required class="input">
-                    <option value="" disabled selected></option>
-                    <option value="individual">Individual</option>
-                    <option value="team">Team</option>
-                </select>
-                <span>Select Registration Type</span>
-            </label>
-            
-            <div class="flex">
-                <label>
-                    <input required="" placeholder="" type="text" id="firstname" class="input">
-                    <span>Firstname</span>
-                </label>
-        
-                <label>
-                    <input required="" placeholder="" type="text" id="lastname" class="input">
-                    <span>Lastname</span>
-                </label>
-            </div>  
+      <h1>Register to Play</h1>
+      <p>
+        Event dates: 25 - 26th October 2024 (Enrollment will be after 1 or 2
+        days).
+        <br />Games at Laerskool Fairlands and Cliffview Primary School.
+      </p>
+      <h3>Enter a Team or Individual Enrollment</h3>
+      <form id="registrationForm" class="form">
+        <label>
+          <select id="registrationType" required class="input">
+            <option value="" disabled selected></option>
+            <option value="individual">Individual</option>
+            <option value="team">Team</option>
+          </select>
+          <span>Select Registration Type</span>
+        </label>
 
-            <label>
-                <select id="division" required class="input">
-                    <option value="" disabled selected></option>
-                    <option value="U/6-U/9">U/6 - U/9</option>
-                    <option value="U/10-U/16 FEMALES">U/10-U/16 FEMALES"</option>
-                    <option value="U/10-U/16 MIXED">U/10-U/16 MIXED</option>
-                    <option value="Premier League FEMALE">Premier League FEMALE</option>
-                    <option value="Premier League MALE">Premier League MALE</option>
-                    <option value="Premier League MIXED">Premier League MIXED</option>
-                    <option value="Social FEMALE">Social FEMALE</option>
-                    <option value="Social MALE">Social MALE</option>
-                    <option value="Social MIXED">Social MIXED</option>
-                    <option value="Social-Social FEMALE">Social-Social FEMALE</option>
-                    <option value="Social-Social MIXED">Social-Social MIXED</option>
-                    <option value="Elderly">Elderly</option>
-                    <option value="Daughter & Mother">Daughter & Mother</option>
-                    <option value="Daughter & Father">Daughter & Father</option>
-                </select>
-                <span>Select Division</span>
-            </label>
-                    
-            <label>
-                <input required="" placeholder="" type="email" id="email" class="input">
-                <span>Email</span>
-            </label> 
-                
-            <!-- This will be toggled based on the registration type -->
-            <label id="individualNameLabel" style="display:none;">
-                <input placeholder="" type="text" id="individualName" class="input">
-                <span>Individual Name</span>
-            </label>
-        
-            <label id="teamNameLabel" style="display:none;">
-                <input placeholder="" type="text" id="teamName" class="input">
-                <span>Team Name</span>
-            </label>
-        
-            <button type="submit" class="submit">Submit</button>
-            <p class="signin">This information will be stored in our database </p>
-        </form>
+        <!-- This will be toggled based on the registration type -->
+        <label id="individualNameLabel" style="display: none">
+          <input placeholder="" type="text" id="individualName" class="input" />
+          <span>Individual Name</span>
+        </label>
+
+        <label id="teamNameLabel" style="display: none">
+          <input placeholder="" type="text" id="teamName" class="input" />
+          <span>Team Name</span>
+        </label>
+
+        <div class="flex">
+          <label>
+            <input
+              required=""
+              placeholder=""
+              type="text"
+              id="firstname"
+              class="input"
+            />
+            <span>Name of Player</span>
+          </label>
+
+          <label>
+            <input
+              required=""
+              placeholder=""
+              type="text"
+              id="lastname"
+              class="input"
+            />
+            <span>Surname of Player</span>
+          </label>
+        </div>
+
+        <label>
+            <select id="division" required class="input">
+              <option value="" disabled selected></option>
+              <option value="U/6-U/9">U/6 - U/9</option>
+              <option value="U/10-U/16 FEMALES">U/10-U/16 FEMALES"</option>
+              <option value="U/10-U/16 MIXED">U/10-U/16 MIXED</option>
+              <option value="Premier League FEMALE">Premier League FEMALE</option>
+              <option value="Premier League MALE">Premier League MALE</option>
+              <option value="Premier League MIXED">Premier League MIXED</option>
+              <option value="Social FEMALE">Social FEMALE</option>
+              <option value="Social MALE">Social MALE</option>
+              <option value="Social MIXED">Social MIXED</option>
+              <option value="Social-Social FEMALE">Social-Social FEMALE</option>
+              <option value="Social-Social MIXED">Social-Social MIXED</option>
+              <option value="Elderly">Elderly</option>
+              <option value="Daughter & Mother">Daughter & Mother</option>
+              <option value="Daughter & Father">Daughter & Father</option>
+            </select>
+            <span>Select Division</span>
+          </label>
+
+        <!-- Radio buttons for age selection -->
+        <label>
+            <input
+                required=""
+                type="radio"
+                id="isChildYes"
+                name="isChild"
+                value="yes"
+            />
+            <span>Under 18</span>
+            <input
+                required=""
+                type="radio"
+                id="isChildNo"
+                name="isChild"
+                value="no"
+            />
+            <span>Over 18</span>
+        </label>
+
+        <!-- Parent information label -->
+        <div id="parent-info-label">
+            <h3>Parent/Guardian Contact Information</h3>
+        </div>
+
+        <label>
+          <input
+            required=""
+            placeholder=""
+            type="tel"
+            id="contact1"
+            class="input"
+          />
+          <span id="contact1Label">Contact</span>
+        </label>
+
+        <label>
+          <input
+            required=""
+            placeholder=""
+            type="tel"
+            id="contact2"
+            class="input"
+          />
+          <span id="contactLabel2">Alternative Contact</span>
+        </label>
+
+        <label>
+          <input
+            required=""
+            placeholder=""
+            type="email"
+            id="email"
+            class="input"
+          />
+          <span id="emailLabel">Email</span>
+        </label>
+
+        <div class="custom-dropdown">
+          <button onclick="toggleDropdown()" class="submit">
+            Select Donation Types
+          </button>
+          <div id="dropdown-content" class="dropdown-content">
+            <label
+              ><input type="checkbox" name="donations" value="amount" />
+              Donation Amount</label
+            ><br />
+            <label
+              ><input type="checkbox" name="donations" value="equipment" />
+              Equipment</label
+            ><br />
+            <label
+              ><input type="checkbox" name="donations" value="prizes" />
+              Prizes</label
+            ><br />
+            <label
+              ><input type="checkbox" name="donations" value="hampers" />
+              Hampers</label
+            ><br />
+            <label
+              ><input type="checkbox" name="donations" value="water" />
+              Water</label
+            ><br />
+            <label
+              ><input type="checkbox" name="donations" value="goodybags" />
+              Goody Bags</label
+            ><br />
+            <label
+              ><input type="checkbox" name="donations" value="child" /> Sponsor
+              a child in team development @ R350</label
+            ><br />
+            <label
+              ><input type="checkbox" name="donations" value="bibs" />
+              Bibs</label
+            ><br />
+          </div>
+        </div>
+
+        <button type="submit" class="submit">Submit</button>
+        <p class="signin">This information will be stored in our database</p>
+      </form>
     </center>
 
-    <div id="notification" style="display:none; color: green; font-weight: bold;">
-        Registration successful! Thank you for registering.
+    <div
+      id="notification"
+      style="display: none; color: green; font-weight: bold"
+    >
+      Registration successful! Thank you for registering.
     </div>
 
     <!-- JavaScript code to toggle visibility -->
     <script>
-        document.getElementById('registrationType').addEventListener('change', function() {
-            const individualNameLabel = document.getElementById('individualNameLabel');
-            const teamNameLabel = document.getElementById('teamNameLabel');
+        document.querySelectorAll('input[name="isChild"]').forEach((elem) => {
+            elem.addEventListener('change', function(event) {
+                if (event.target.value === 'yes') {
+                    // Show the parent info section and update labels
+                    document.getElementById('parent-info-label').style.display = 'block';
+                    document.getElementById('contact1Label').textContent = "Parent's Contact";
+                    document.getElementById('contact2Label').textContent = "Parent's Alternative Contact";
+                    document.getElementById('emailLabel').textContent = "Parent's Email";
+                    document.getElementById('contact1').setAttribute('placeholder', "Parent's Contact");
+                    document.getElementById('contact2').setAttribute('placeholder', "Parent's Alternative Contact");
+                    document.getElementById('email').setAttribute('placeholder', "Parent's Email");
+                } else {
+                    // Hide the parent info section and revert labels
+                    document.getElementById('parent-info-label').style.display = 'none';
+                    document.getElementById('contact1Label').textContent = "Contact";
+                    document.getElementById('contact2Label').textContent = "Alternative Contact";
+                    document.getElementById('emailLabel').textContent = "Email";
+                    document.getElementById('contact1').setAttribute('placeholder', "Contact");
+                    document.getElementById('contact2').setAttribute('placeholder', "Alternative Contact");
+                    document.getElementById('email').setAttribute('placeholder', "Email");
+                }
+            });
+        });
+        
+      function toggleDropdown() {
+        document.getElementById("dropdown-content").classList.toggle("show");
+      }
 
-            if (this.value === 'individual') {
-                individualNameLabel.style.display = 'block';
-                teamNameLabel.style.display = 'none';
-                document.getElementById('individualName').required = true;
-                document.getElementById('teamName').required = false;
-            } else if (this.value === 'team') {
-                individualNameLabel.style.display = 'none';
-                teamNameLabel.style.display = 'block';
-                document.getElementById('individualName').required = false;
-                document.getElementById('teamName').required = true;
-            } else {
-                individualNameLabel.style.display = 'none';
-                teamNameLabel.style.display = 'none';
-                document.getElementById('individualName').required = false;
-                document.getElementById('teamName').required = false;
-            }
+      document
+        .getElementById("registrationType")
+        .addEventListener("change", function () {
+          const individualNameLabel = document.getElementById(
+            "individualNameLabel"
+          );
+          const teamNameLabel = document.getElementById("teamNameLabel");
+
+          if (this.value === "individual") {
+            individualNameLabel.style.display = "block";
+            teamNameLabel.style.display = "none";
+            document.getElementById("individualName").required = true;
+            document.getElementById("teamName").required = false;
+          } else if (this.value === "team") {
+            individualNameLabel.style.display = "none";
+            teamNameLabel.style.display = "block";
+            document.getElementById("individualName").required = false;
+            document.getElementById("teamName").required = true;
+          } else {
+            individualNameLabel.style.display = "none";
+            teamNameLabel.style.display = "none";
+            document.getElementById("individualName").required = false;
+            document.getElementById("teamName").required = false;
+          }
         });
     </script>
     <script src="static/js/registration.js"></script>
-</body>
+  </body>
 
-<footer>
-    <img src="static/img/footer.jpg" alt="">
+  <footer>
+    <img src="static/img/footer.jpg" alt="" />
     <p class="nostyle2">&copy; 2024</p>
-</footer>
+  </footer>
 </html>
