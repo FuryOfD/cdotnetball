@@ -161,45 +161,16 @@
           <span id="emailLabel">Email</span>
         </label>
 
-        <div class="custom-dropdown">
-          <button onclick="toggleDropdown()" class="submit">
-            Select Donation Types
-          </button>
-          <div id="dropdown-content" class="dropdown-content">
-            <label
-              ><input type="checkbox" name="donations" value="amount" />
-              Donation Amount</label
-            ><br />
-            <label
-              ><input type="checkbox" name="donations" value="equipment" />
-              Equipment</label
-            ><br />
-            <label
-              ><input type="checkbox" name="donations" value="prizes" />
-              Prizes</label
-            ><br />
-            <label
-              ><input type="checkbox" name="donations" value="hampers" />
-              Hampers</label
-            ><br />
-            <label
-              ><input type="checkbox" name="donations" value="water" />
-              Water</label
-            ><br />
-            <label
-              ><input type="checkbox" name="donations" value="goodybags" />
-              Goody Bags</label
-            ><br />
-            <label
-              ><input type="checkbox" name="donations" value="child" /> Sponsor
-              a child in team development @ R350</label
-            ><br />
-            <label
-              ><input type="checkbox" name="donations" value="bibs" />
-              Bibs</label
-            ><br />
-          </div>
-        </div>
+        <label>I would like to sponsor in the form of:</label><br>
+        <label><input type="checkbox" name="donations" value="amount"> Donation Amount</label><br>
+        <label><input type="checkbox" name="donations" value="equipment"> Equipment</label><br>
+        <label><input type="checkbox" name="donations" value="prizes"> Prizes</label><br>
+        <label><input type="checkbox" name="donations" value="hampers"> Hampers</label><br>
+        <label><input type="checkbox" name="donations" value="water"> Water</label><br>
+        <label><input type="checkbox" name="donations" value="goodybags"> Goody Bags</label><br>
+        <label><input type="checkbox" name="donations" value="child"> Sponsor a child in team development @ R350</label><br>
+        <label><input type="checkbox" name="donations" value="bibs"> Bibs</label><br>
+        
 
         <button type="submit" class="submit">Submit</button>
         <p class="signin">This information will be stored in our database</p>
@@ -213,62 +184,6 @@
       Registration successful! Thank you for registering.
     </div>
 
-    <!-- JavaScript code to toggle visibility -->
-    <script>
-        document.querySelectorAll('input[name="isChild"]').forEach((elem) => {
-            elem.addEventListener('change', function(event) {
-                if (event.target.value === 'yes') {
-                    // Show the parent info section and update labels
-                    document.getElementById('parent-info-label').style.display = 'block';
-                    document.getElementById('contact1Label').textContent = "Parent's Contact";
-                    document.getElementById('contact2Label').textContent = "Parent's Alternative Contact";
-                    document.getElementById('emailLabel').textContent = "Parent's Email";
-                    document.getElementById('contact1').setAttribute('placeholder', "Parent's Contact");
-                    document.getElementById('contact2').setAttribute('placeholder', "Parent's Alternative Contact");
-                    document.getElementById('email').setAttribute('placeholder', "Parent's Email");
-                } else {
-                    // Hide the parent info section and revert labels
-                    document.getElementById('parent-info-label').style.display = 'none';
-                    document.getElementById('contact1Label').textContent = "Contact";
-                    document.getElementById('contact2Label').textContent = "Alternative Contact";
-                    document.getElementById('emailLabel').textContent = "Email";
-                    document.getElementById('contact1').setAttribute('placeholder', "Contact");
-                    document.getElementById('contact2').setAttribute('placeholder', "Alternative Contact");
-                    document.getElementById('email').setAttribute('placeholder', "Email");
-                }
-            });
-        });
-        
-      function toggleDropdown() {
-        document.getElementById("dropdown-content").classList.toggle("show");
-      }
-
-      document
-        .getElementById("registrationType")
-        .addEventListener("change", function () {
-          const individualNameLabel = document.getElementById(
-            "individualNameLabel"
-          );
-          const teamNameLabel = document.getElementById("teamNameLabel");
-
-          if (this.value === "individual") {
-            individualNameLabel.style.display = "block";
-            teamNameLabel.style.display = "none";
-            document.getElementById("individualName").required = true;
-            document.getElementById("teamName").required = false;
-          } else if (this.value === "team") {
-            individualNameLabel.style.display = "none";
-            teamNameLabel.style.display = "block";
-            document.getElementById("individualName").required = false;
-            document.getElementById("teamName").required = true;
-          } else {
-            individualNameLabel.style.display = "none";
-            teamNameLabel.style.display = "none";
-            document.getElementById("individualName").required = false;
-            document.getElementById("teamName").required = false;
-          }
-        });
-    </script>
     <script src="static/js/registration.js"></script>
   </body>
 
