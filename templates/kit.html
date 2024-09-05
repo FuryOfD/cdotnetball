@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      charset="UTF-8"
+    />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link rel="stylesheet" href="static/css/home.css" />
+  </head>
+  <body>
+    <header>
+        <center>
+            <div>
+                <img src="static/img/logo.jpg" alt="CDOT LOGO">
+            </div>
+            <br>
+            <div class="nav">
+                <a href="{{ url_for('index') }}" class="nostyle">
+                  <button class="value">HOME</button>
+                </a>
+                <a href="{{ url_for('register_page') }}" class="nostyle">
+                  <button class="value">REGISTER</button>
+                </a>
+                <a href="{{ url_for('info_page') }}" class="nostyle">
+                    <button class="value">INFO</button>
+                </a>
+                <a href="{{ url_for('clothes_page') }}" class="nostyle">
+                  <button class="value">KIT</button>
+              </a>
+              </div>
+        </center>
+    <br>
+    </header>
+  </body>
+  <footer>
+    <img src="static/img/footer.jpg" alt="" />
+    <p class="nostyle2">&copy; 2024</p>
+  </footer>
+</html>

@@ -9,6 +9,10 @@ application = Flask(__name__)
 def index():
     return render_template('home.html')
 
+# application.route('/header')
+# def header():
+#     return render_template('header.html')
+
 @application.route('/home')
 def home_page():
     return render_template('home.html')
@@ -16,6 +20,10 @@ def home_page():
 @application.route('/register')
 def register_page():
     return render_template('register.html')
+
+@application.route('/clothes')
+def clothes_page():
+    return render_template('kit.html')
 
 @application.route('/confirmation')
 def confirmation_page():
