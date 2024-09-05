@@ -11,32 +11,183 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
-    <link rel="stylesheet" href="static/css/home.css" />
+    <link rel="stylesheet" href="static/css/kit.css" />
   </head>
   <body>
     <header>
-        <center>
-            <div>
-                <img src="static/img/logo.jpg" alt="CDOT LOGO">
-            </div>
-            <br>
-            <div class="nav">
-                <a href="{{ url_for('index') }}" class="nostyle">
-                  <button class="value">HOME</button>
-                </a>
-                <a href="{{ url_for('register_page') }}" class="nostyle">
-                  <button class="value">REGISTER</button>
-                </a>
-                <a href="{{ url_for('info_page') }}" class="nostyle">
-                    <button class="value">INFO</button>
-                </a>
-                <a href="{{ url_for('clothes_page') }}" class="nostyle">
-                  <button class="value">KIT</button>
-              </a>
-              </div>
-        </center>
-    <br>
+      <center>
+        <div>
+          <img src="static/img/logo.jpg" alt="CDOT LOGO" />
+        </div>
+        <br />
+        <div class="nav">
+          <a href="{{ url_for('index') }}" class="nostyle">
+            <button class="value">HOME</button>
+          </a>
+          <a href="{{ url_for('register_page') }}" class="nostyle">
+            <button class="value">REGISTER</button>
+          </a>
+          <a href="{{ url_for('info_page') }}" class="nostyle">
+            <button class="value">INFO</button>
+          </a>
+          <a href="{{ url_for('clothes_page') }}" class="nostyle">
+            <button class="value">KIT</button>
+          </a>
+        </div>
+      </center>
+      <br />
     </header>
+
+    <center>
+      <div>
+        <img src="static/img/top.jpg" alt="CDOT TOP" />
+        <img src="static/img/pants.jpg" alt="CDOT PANTS" />
+      </div>
+      <br>
+      
+      <p>Available Kit Colors:</p>
+      <table>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: white;"></div>
+            <span class="color-name">White</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: black;"></div>
+            <span class="color-name">Black</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: grey;"></div>
+            <span class="color-name">Grey</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: #36454F;"></div>
+            <span class="color-name">Charcoal</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #B5A642;"></div>
+            <span class="color-name">Stone</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #654321;"></div>
+            <span class="color-name">Dark Brown</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: #FFFF33;"></div>
+            <span class="color-name">Neon Yellow</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: yellow;"></div>
+            <span class="color-name">Yellow</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #FFD700;"></div>
+            <span class="color-name">Gold Yellow</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: #00FF00;"></div>
+            <span class="color-name">Lime</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #50C878;"></div>
+            <span class="color-name">Emerald</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #006400;"></div>
+            <span class="color-name">Bottle</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: #013220;"></div>
+            <span class="color-name">Dark Green</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #004225;"></div>
+            <span class="color-name">Very Dark Green</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #87CEEB;"></div>
+            <span class="color-name">Sky Blue</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: #4169E1;"></div>
+            <span class="color-name">Royal</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #000080;"></div>
+            <span class="color-name">Navy</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #D8BFD8;"></div>
+            <span class="color-name">Light Purple</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: #800080;"></div>
+            <span class="color-name">Purple</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #F4C2C2;"></div>
+            <span class="color-name">Baby Pink</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #FFC0CB;"></div>
+            <span class="color-name">Pink</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: #DE3163;"></div>
+            <span class="color-name">Cerise Pink</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #FFE5B4;"></div>
+            <span class="color-name">Peach</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #FF5F1F;"></div>
+            <span class="color-name">Neon Orange</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-swatch" style="background-color: orange;"></div>
+            <span class="color-name">Orange</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: red;"></div>
+            <span class="color-name">Red</span>
+          </td>
+          <td>
+            <div class="color-swatch" style="background-color: #800000;"></div>
+            <span class="color-name">Burgundy/Maroon</span>
+          </td>
+        </tr>
+      </table>
+
+
+    <div class="frame2">
+    </div>
+    <div>
+        
+        <div class="text">
+            <h4>INTERESTED?</h4>
+            Contact Liza at sales@mainlinesportwear.co.za
+        </div>
+        <br>
+    </div>
+    
+</center>
   </body>
   <footer>
     <img src="static/img/footer.jpg" alt="" />

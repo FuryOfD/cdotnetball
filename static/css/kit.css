@@ -1,0 +1,31 @@
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid #000;
+  }
+  .color-name {
+    vertical-align: middle;
+    margin-top: 2px;
+  }
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .frame2{
+    background-image: url('/static/img/mainline.jpg');
+    background-size: cover;      /* Make the background image cover the element */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center;  /* Center the image */
+    height: 400px;                /* Set a height for the div */
+    width: 100%;  
+  }
