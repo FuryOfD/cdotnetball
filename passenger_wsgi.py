@@ -44,12 +44,38 @@ def register():
         # Determine registration type and write to CSV accordingly
         with open('registrations.csv', mode='a', newline='') as file:
             writer = csv.writer(file)
+        
             if data['registrationType'] == 'team':
-                writer.writerow(['TEAM-' + data['teamName'], data['division'], data['firstname'], data['lastname'],data['isChild'] ,data['contact1'], data['contact2'],data['email'],', ' .join(data['donation'])])
+                # Join the player names into a single string
+                player_names = ', '.join(data.get('players', []))
+            
+                # Write team registration details along with player names
+                writer.writerow([
+                    'TEAM-' + data['teamName'],  # Team name
+                    data['division'],            # Division
+                    data['firstname'],           # First name (of the person registering)
+                    data['lastname'],            # Last name (of the person registering)
+                    data['isChild'],             # Is child or not
+                    data['contact1'],            # Contact 1
+                    data['contact2'],            # Contact 2
+                    data['email'],               # Email
+                    ', '.join(data['donation']), # Donations
+                    player_names                 # Team players (all player names)
+                ])
             else:
-                writer.writerow(['TEAM-' + data['teamName'], data['division'], data['firstname'], data['lastname'],data['isChild'] ,data['contact1'], data['contact2'],data['email'],', ' .join(data['donation'])])
-
-        return jsonify({'message': 'Registration successful'}), 200
+                # Individual registration
+                writer.writerow([
+                    'INDIVIDUAL-' + data['individualName'],  # Individual name
+                    data['division'],                        # Division
+                    data['firstname'],                       # First name
+                    data['lastname'],                        # Last name
+                    data['isChild'],                         # Is child or not
+                    data['contact1'],                        # Contact 1
+                    data['contact2'],                        # Contact 2
+                    data['email'],                           # Email
+                    ', '.join(data['donation'])              # Donations
+                ])
+            return jsonify({'message': 'Registration successful'}), 200
     else:
         return jsonify({'message': 'Invalid content type'}), 415  # 415 Unsupported Media Type
 
