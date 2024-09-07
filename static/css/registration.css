@@ -41,6 +41,12 @@
     font-weight: bold;
     margin-left: 5px;
   }
+
+  .sameline{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
   
 
   .content-wrapper {
@@ -59,7 +65,7 @@
     text-align: center;  /* Centers the paragraph content */
     padding: 0 20px;  /* Adds some padding between the text and images */
   }
-  
+
   .title {
     font-size: 28px;
     color: #063970;

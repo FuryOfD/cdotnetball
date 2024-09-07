@@ -133,7 +133,10 @@
           <span>Team Name</span>
         </label>
 
-        <div class="flex">
+        
+        
+
+        <div id="flex"class="flex">
           <label>
             <input
               required=""
@@ -155,6 +158,19 @@
             />
             <span>Surname of Player</span>
           </label>
+        </div>
+
+        <div id="teamPlayersSection" style="display: none;">
+          <h4>Rest of Team Players</h4>
+          <div id="teamPlayersContainer">
+            <label><input placeholder="Player 1 Name" type="text" class="input team-player" /></label>
+          </div>
+          <br>
+          <div class="sameline">
+            <button class="submit" type="button" id="addPlayerBtn">+</button>
+            <button  class="submit" type="button" id="removePlayerBtn" style="display:none;">-</button>
+          </div>
+         
         </div>
 
         <label>

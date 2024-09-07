@@ -1,4 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const registrationType = document.getElementById('registrationType');
+const individualNameLabel = document.getElementById('individualNameLabel');
+const teamNameLabel = document.getElementById('teamNameLabel');
+const teamPlayersSection = document.getElementById('teamPlayersSection');
+const addPlayerBtn = document.getElementById('addPlayerBtn');
+const teamPlayersContainer = document.getElementById('teamPlayersContainer');
+
+registrationType.addEventListener('change', function() {
+    if (this.value === 'individual') {
+      individualNameLabel.style.display = 'block';
+      teamNameLabel.style.display = 'none';
+      teamPlayersSection.style.display = 'none';
+    } else if (this.value === 'team') {
+      individualNameLabel.style.display = 'none';
+      teamNameLabel.style.display = 'block';
+      teamPlayersSection.style.display = 'block';
+    }
+  });
+
+  // Add player button
+  document.getElementById('addPlayerBtn').addEventListener('click', function() {
+    const playerCount = document.querySelectorAll('.team-player').length + 1;
+    const newPlayer = document.createElement('label');
+    newPlayer.innerHTML = `<input placeholder="Player ${playerCount} Name" type="text" class="input team-player" />`;
+    document.getElementById('teamPlayersContainer').appendChild(newPlayer);
+
+    // Show the remove button if there's more than one player
+    if (playerCount > 1) {
+        document.getElementById('removePlayerBtn').style.display = 'block';
+    }
+});
+
+// Remove player button
+document.getElementById('removePlayerBtn').addEventListener('click', function() {
+    const playerInputs = document.querySelectorAll('.team-player');
+    if (playerInputs.length > 1) {
+        playerInputs[playerInputs.length - 1].parentElement.remove(); // Remove the last player input
+    }
+
+    // Hide the remove button if only one player remains
+    if (playerInputs.length <= 2) {
+        document.getElementById('removePlayerBtn').style.display = 'none';
+    }
+});
+
+
     document
         .getElementById("registrationType")
         .addEventListener("change", function () {
@@ -17,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             teamNameLabel.style.display = "block";
             document.getElementById("individualName").required = false;
             document.getElementById("teamName").required = true;
+
           } else {
             individualNameLabel.style.display = "none";
             teamNameLabel.style.display = "none";
@@ -74,6 +121,12 @@ document.addEventListener('DOMContentLoaded', function() {
         donation: selectedDonations, // Use array of selected donations
     };
 
+     // Get all player names if the registration type is "team"
+     if (data.registrationType === 'team') {
+        const playerNames = Array.from(document.querySelectorAll('.team-player')).map(input => input.value);
+        data.players = playerNames;
+    }
+
         // Send data to backend via POST request
         fetch('/register', {
             method: 'POST',
@@ -93,3 +146,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 });
+
