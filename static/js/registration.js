@@ -22,7 +22,7 @@ registrationType.addEventListener('change', function() {
   document.getElementById('addPlayerBtn').addEventListener('click', function() {
     const playerCount = document.querySelectorAll('.team-player').length + 1;
     const newPlayer = document.createElement('label');
-    newPlayer.innerHTML = `<input placeholder="Player ${playerCount} Name" type="text" class="input team-player" />`;
+    newPlayer.innerHTML = `<input placeholder="Player ${playerCount} Name & Surname" type="text" class="input team-player" />`;
     document.getElementById('teamPlayersContainer').appendChild(newPlayer);
 
     // Show the remove button if there's more than one player
