@@ -11,14 +11,35 @@
     margin-top: 2px;
   }
   table {
-    width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: auto;
+    width: auto;
   }
-  td {
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
     padding: 10px;
     text-align: left;
-    vertical-align: middle;
+    vertical-align: top; /* Ensures content aligns to the top of the cell */
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  caption {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 5px;
   }
 
   .frame2{

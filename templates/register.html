@@ -19,14 +19,14 @@
               <a href="{{ url_for('index') }}" class="nostyle">
                 <button class="value">HOME</button>
               </a>
-              <a href="{{ url_for('register_page') }}" class="nostyle">
-                <button class="value">REGISTER</button>
-              </a>
               <a href="{{ url_for('info_page') }}" class="nostyle">
                   <button class="value">INFO</button>
               </a>
               <a href="{{ url_for('clothes_page') }}" class="nostyle">
                 <button class="value">KIT</button>
+            </a>
+            <a href="{{ url_for('register_page') }}" class="nostyle">
+              <button class="value">REGISTER</button>
             </a>
             </div>
       </center>
@@ -34,53 +34,9 @@
   </header>
 
     <center>
-      <div>
-        <h1>Entry Options - ALL AGES</h1>
-        <table>
-          <tr>
-            <th>Netball</th>
-            <th>Players</th>
-            <th>Entry pp</th>
-            <th>Dress</th>
-            <th>Tank Top & Short</th>
-            <th>Socks</th>
-            <th>Hot Pants</th>
-            <th>Long Sleeve</th>
-            <th>Bibs</th>
-          </tr>
-
-          <tr>
-            <td>Team Enrollment</td>
-            <td>Min 7 - Max 10</td>
-            <td>R350</td>
-            <td>Choose own colour and logo - R395</td>
-            <td>Choose own colour and logo - R395</td>
-            <td>White socks with any colour brand - R100</td>
-            <td>Choose own colour and logo - R220</td>
-            <td>Choose own colour and logo - R250</td>
-            <td>Choose own colour and logo - R750</td>
-          </tr>
-
-          <tr>
-            <td>Individual Enrollment</td>
-            <td></td>
-            <td>R350</td>
-            <td>Order from C.Dot list - R395</td>
-            <td>Order from C.Dot list - R395</td>
-            <td>R100</td>
-            <td>Order from C.Dot list - R220</td>
-            <td>Order from C.Dot list - R250</td>
-            <td></td>
-          </tr>
-
-          <tr >
-            <td colspan="9">NB! Individual enrollment to wear black/white if do not order from C.Dot</td>
-          </tr>
-        </table>
-      </div>
-
+  
       <br>
-      <div class="content-wrapper">
+      <div>
         <img src="static/img/foto1.jpg" alt="Image 1" />
         
         <div class="text-content">
@@ -90,14 +46,14 @@
       <p>
         We are excited to see you at the big day!
         From C.Dot we really appreciate your participation.
-        With your enrollment, the club can provide new equipment and facilities for the kids.
+        With your enrollment, the club can provide new equipment for the kids.
         <br />
         <br />
         If any of you would like to to help us with sponsers, the C.Dot family would appreciate it.
         <br />
 
         <ul style="list-style-type: none;">
-          <li>- Donations prizes to give away on th day, hampers, platters for umpires, water, ice, lolllies, etc.</li>
+          <li>- Donations prizes, hampers, platters for umpires, water, ice, lolllies, etc to give away on the day.</li>
           <li>- Sponser a child in a development team @ R350 to join in the tournament.</li>
         </ul>
 
@@ -133,35 +89,18 @@
           <span>Team Name</span>
         </label>
 
+        <label id="teamCapLabel" style="display: none">
+          <input placeholder="" type="text" id="teamCap" class="input" />
+          <span>Team Captain's Name</span>
+        </label>
+
         
         
 
-        <div id="flex"class="flex">
-          <label>
-            <input
-              required=""
-              placeholder=""
-              type="text"
-              id="firstname"
-              class="input"
-            />
-            <span>Name of Player</span>
-          </label>
-
-          <label>
-            <input
-              required=""
-              placeholder=""
-              type="text"
-              id="lastname"
-              class="input"
-            />
-            <span>Surname of Player</span>
-          </label>
-        </div>
+      
 
         <div id="teamPlayersSection" style="display: none;">
-          <h4>Rest of Team Players</h4>
+          <h4>Team Players</h4>
           <div id="teamPlayersContainer">
             <label><input placeholder="Player 1 Name" type="text" class="input team-player" /></label>
           </div>
@@ -260,7 +199,7 @@
         <label><input type="checkbox" name="donations" value="water"> Water</label><br>
         <label><input type="checkbox" name="donations" value="goodybags"> Goody Bags</label><br>
         <label><input type="checkbox" name="donations" value="childsponser"> Sponsor a child in team development @ R350</label><br>
-        <label><input type="checkbox" name="donations" value="bibs"> Bibs</label><br>
+        
         
 
         <button type="submit" class="submit">Submit</button>

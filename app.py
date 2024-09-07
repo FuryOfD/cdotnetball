@@ -51,10 +51,11 @@ def register():
             
                 # Write team registration details along with player names
                 writer.writerow([
-                    'TEAM-' + data['teamName'],  # Team name
+                    'TEAM-' + data['teamName'], 
+                    data['teamCap'],             # Team name
                     data['division'],            # Division
-                    data['firstname'],           # First name (of the person registering)
-                    data['lastname'],            # Last name (of the person registering)
+                    # data['firstname'],           # First name (of the person registering)
+                    # data['lastname'],            # Last name (of the person registering)
                     data['isChild'],             # Is child or not
                     data['contact1'],            # Contact 1
                     data['contact2'],            # Contact 2
@@ -67,8 +68,8 @@ def register():
                 writer.writerow([
                     'INDIVIDUAL-' + data['individualName'],  # Individual name
                     data['division'],                        # Division
-                    data['firstname'],                       # First name
-                    data['lastname'],                        # Last name
+                    # data['firstname'],                       # First name
+                    # data['lastname'],                        # Last name
                     data['isChild'],                         # Is child or not
                     data['contact1'],                        # Contact 1
                     data['contact2'],                        # Contact 2

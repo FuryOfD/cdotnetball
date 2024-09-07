@@ -52,6 +52,7 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
             "individualNameLabel"
           );
           const teamNameLabel = document.getElementById("teamNameLabel");
+          const teamCapLabel = document.getElementById("teamCapLabel");
 
           if (this.value === "individual") {
             individualNameLabel.style.display = "block";
@@ -61,14 +62,17 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
           } else if (this.value === "team") {
             individualNameLabel.style.display = "none";
             teamNameLabel.style.display = "block";
+            teamCapLabel.style.display = "block";
             document.getElementById("individualName").required = false;
             document.getElementById("teamName").required = true;
+            document.getElementById("teamCap").required = true;
 
           } else {
             individualNameLabel.style.display = "none";
             teamNameLabel.style.display = "none";
             document.getElementById("individualName").required = false;
             document.getElementById("teamName").required = false;
+            document.getElementById("teamCap").required = false;
           }
         });
 
@@ -77,12 +81,12 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
             if (event.target.value === 'yes') {
                 // Show the parent info section and update labels
                 document.getElementById('parent-info-label').style.display = 'block';
-                document.getElementById('contact1Label').textContent = "Parent's Contact";
-                document.getElementById('contact2Label').textContent = "Parent's Alternative Contact";
-                document.getElementById('emailLabel').textContent = "Parent's Email";
-                document.getElementById('contact1').setAttribute('placeholder', "Parent's Contact");
-                document.getElementById('contact2').setAttribute('placeholder', "Parent's Alternative Contact");
-                document.getElementById('email').setAttribute('placeholder', "Parent's Email");
+                document.getElementById('contact1Label').textContent = "Parent/Gaurdian's Contact";
+                document.getElementById('contact2Label').textContent = "Parent/Gaurdian's Alternative Contact";
+                document.getElementById('emailLabel').textContent = "Parent/Gaurdian's Email";
+                document.getElementById('contact1').setAttribute('placeholder', "Parent/Gaurdian's Contact");
+                document.getElementById('contact2').setAttribute('placeholder', "Parent/Gaurdian's Alternative Contact");
+                document.getElementById('email').setAttribute('placeholder', "Parent/Gaurdian's Email");
             } else {
                 // Hide the parent info section and revert labels
                 document.getElementById('parent-info-label').style.display = 'none';
@@ -111,8 +115,9 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         registrationType: document.getElementById('registrationType').value,
         individualName: document.getElementById('individualName').value,
         teamName: document.getElementById('teamName').value,
-        firstname: document.getElementById('firstname').value,
-        lastname: document.getElementById('lastname').value,
+        teamCap : document.getElementById('teamCap').value,
+        // firstname: document.getElementById('firstname').value,
+        // lastname: document.getElementById('lastname').value,
         division: document.getElementById('division').value,
         isChild: document.querySelector('input[name="isChild"]:checked') ? document.querySelector('input[name="isChild"]:checked').value : null,
         contact1: document.getElementById('contact1').value,

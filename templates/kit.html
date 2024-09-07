@@ -16,29 +16,74 @@
   <body>
     <header>
       <center>
-        <div>
-          <img src="static/img/logo.jpg" alt="CDOT LOGO" />
-        </div>
-        <br />
-        <div class="nav">
-          <a href="{{ url_for('index') }}" class="nostyle">
-            <button class="value">HOME</button>
-          </a>
-          <a href="{{ url_for('register_page') }}" class="nostyle">
-            <button class="value">REGISTER</button>
-          </a>
-          <a href="{{ url_for('info_page') }}" class="nostyle">
-            <button class="value">INFO</button>
-          </a>
-          <a href="{{ url_for('clothes_page') }}" class="nostyle">
-            <button class="value">KIT</button>
-          </a>
-        </div>
+          <div>
+              <img src="static/img/logo.jpg" alt="CDOT LOGO">
+          </div>
+          <br>
+          <div class="nav">
+              <a href="{{ url_for('index') }}" class="nostyle">
+                <button class="value">HOME</button>
+              </a>
+              <a href="{{ url_for('info_page') }}" class="nostyle">
+                  <button class="value">INFO</button>
+              </a>
+              <a href="{{ url_for('clothes_page') }}" class="nostyle">
+                <button class="value">KIT</button>
+            </a>
+            <a href="{{ url_for('register_page') }}" class="nostyle">
+              <button class="value">REGISTER</button>
+            </a>
+            </div>
       </center>
-      <br />
-    </header>
+  <br>
+  </header>
 
     <center>
+      <div>
+        <h1>Entry Options - ALL AGES</h1>
+        <table>
+          <tr>
+            <th>Netball</th>
+            <th>Players</th>
+            <th>Entry pp</th>
+            <th>Dress</th>
+            <th>Tank Top & Short</th>
+            <th>Socks</th>
+            <th>Hot Pants</th>
+            <th>Long Sleeve</th>
+            <th>Bibs</th>
+          </tr>
+
+          <tr>
+            <td>Team Enrollment</td>
+            <td>Min 7 - Max 10</td>
+            <td>R350</td>
+            <td>Choose own colour and logo - R395</td>
+            <td>Choose own colour and logo - R395</td>
+            <td>White socks with any colour brand - R100</td>
+            <td>Choose own colour and logo - R220</td>
+            <td>Choose own colour and logo - R250</td>
+            <td>Choose own colour and logo - R750</td>
+          </tr>
+
+          <tr>
+            <td>Individual Enrollment</td>
+            <td></td>
+            <td>R350</td>
+            <td>Order from C.Dot list - R395</td>
+            <td>Order from C.Dot list - R395</td>
+            <td>R100</td>
+            <td>Order from C.Dot list - R220</td>
+            <td>Order from C.Dot list - R250</td>
+            <td></td>
+          </tr>
+
+          <tr >
+            <td colspan="9">NB! Individual enrollment to wear black/white if do not order from C.Dot</td>
+          </tr>
+        </table>
+      </div>
+      <br>
       <div>
         <img src="static/img/top.jpg" alt="CDOT TOP" />
         <img src="static/img/pants.jpg" alt="CDOT PANTS" />
