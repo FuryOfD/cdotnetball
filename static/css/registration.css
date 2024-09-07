@@ -42,6 +42,24 @@
     margin-left: 5px;
   }
   
+
+  .content-wrapper {
+    display: flex;
+    align-items: center;  /* Vertically aligns items */
+    justify-content: space-between;  /* Ensures equal space between items */
+  }
+
+  .content-wrapper img {
+    width: 150px; /* Adjust the image size */
+    height: auto;
+    border-radius: 10px; /* Optional: to round the edges of the image */
+  }
+
+  .text-content {
+    text-align: center;  /* Centers the paragraph content */
+    padding: 0 20px;  /* Adds some padding between the text and images */
+  }
+  
   .title {
     font-size: 28px;
     color: #063970;
