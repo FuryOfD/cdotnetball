@@ -9,16 +9,7 @@
     color: #ffffff;
 }
 
-.frame{
-    background-image: url('/static/img/divisions.jpg');
-    background-size: cover;      /* Make the background image cover the element */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: center;  /* Center the image */
-    height: 200px;                /* Set a height for the div */
-    width: 100%;  
-    border-bottom: #e846cd 5px solid;
-    border-top: #e846cd 5px solid;
-  }
+
 
 .slideshow-container::before {
     content: '';
@@ -146,5 +137,16 @@ td {
 h4 {
     margin-bottom: 10px;
 }
+
+.frame{
+    background-image: url('/static/img/divisions.jpg');
+    background-size: cover;      /* Make the background image cover the element */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center;  /* Center the image */
+    height: 200px;                /* Set a height for the div */
+    width: 100%;  
+    border-bottom: #e846cd 5px solid;
+    border-top: #e846cd 5px solid;
+  }
 
 
