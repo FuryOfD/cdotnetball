@@ -81,21 +81,25 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
             if (event.target.value === 'yes') {
                 // Show the parent info section and update labels
                 document.getElementById('parent-info-label').style.display = 'block';
+
                 document.getElementById('contact1Label').textContent = "Parent/Gaurdian's Contact";
                 document.getElementById('contact2Label').textContent = "Parent/Gaurdian's Alternative Contact";
                 document.getElementById('emailLabel').textContent = "Parent/Gaurdian's Email";
-                document.getElementById('contact1').setAttribute('placeholder', "Parent/Gaurdian's Contact");
-                document.getElementById('contact2').setAttribute('placeholder', "Parent/Gaurdian's Alternative Contact");
-                document.getElementById('email').setAttribute('placeholder', "Parent/Gaurdian's Email");
+                document.getElementById('contactNamelabel').textContent = "Parent/Gaurdian's Name & Surname";
+                
+                // document.getElementById('contact1').setAttribute('placeholder', "Parent/Gaurdian's Contact");
+                // document.getElementById('contact2').setAttribute('placeholder', "Parent/Gaurdian's Alternative Contact");
+                // document.getElementById('email').setAttribute('placeholder', "Parent/Gaurdian's Email");
+                
             } else {
                 // Hide the parent info section and revert labels
                 document.getElementById('parent-info-label').style.display = 'none';
-                document.getElementById('contact1Label').textContent = "Contact";
-                document.getElementById('contact2Label').textContent = "Alternative Contact";
+                document.getElementById('contact1Label').textContent = "Contact Number";
+                document.getElementById('contact2Label').textContent = "Alternative Contact Number";
                 document.getElementById('emailLabel').textContent = "Email";
-                document.getElementById('contact1').setAttribute('placeholder', "Contact");
-                document.getElementById('contact2').setAttribute('placeholder', "Alternative Contact");
-                document.getElementById('email').setAttribute('placeholder', "Email");
+                // document.getElementById('contact1').setAttribute('placeholder', "Contact");
+                // document.getElementById('contact2').setAttribute('placeholder', "Alterndddative Contact");
+                // document.getElementById('email').setAttribute('placeholder', "Email");
             }
         });
     });
@@ -120,6 +124,7 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         // lastname: document.getElementById('lastname').value,
         division: document.getElementById('division').value,
         isChild: document.querySelector('input[name="isChild"]:checked') ? document.querySelector('input[name="isChild"]:checked').value : null,
+        contactName: document.getElementById('contactName').value,
         contact1: document.getElementById('contact1').value,
         contact2: document.getElementById('contact2').value,
         email: document.getElementById('email').value,

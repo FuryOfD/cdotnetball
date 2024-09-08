@@ -5,6 +5,8 @@
   background-position: center;  /* Center the image */
   height: 500px;                /* Set a height for the div */
   width: 100%;  
+  border-bottom: #e846cd 5px solid;
+  border-top: #e846cd 5px solid;
 }
 
 .frame2{

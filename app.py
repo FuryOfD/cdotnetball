@@ -56,7 +56,8 @@ def register():
                     data['division'],            # Division
                     # data['firstname'],           # First name (of the person registering)
                     # data['lastname'],            # Last name (of the person registering)
-                    data['isChild'],             # Is child or not
+                    data['isChild'],  
+                    data['contactName'], # Is child or not
                     data['contact1'],            # Contact 1
                     data['contact2'],            # Contact 2
                     data['email'],               # Email

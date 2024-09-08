@@ -32,7 +32,7 @@ html, body{
   display: flex;
   flex-direction: row;
   width: fit-content;
-  background-color: #ffffff;
+  background-color: #e846cd;
   justify-content: center;
   border-radius: 10px; /* Rounded corners */
   cursor: pointer;
@@ -41,7 +41,7 @@ html, body{
 }
 
 .value {
-  background-color: #ffffff; /* Button background color */
+  background-color: #e846cd; /* Button background color */
   color: #063970;              /* Text color */
   padding: 10px 20px;        /* Padding to make the button more visible */
   border: none;              /* Removes default border */
@@ -91,6 +91,7 @@ footer img{
   width : 50%;
   height: 250px;
   border-radius: 10px; /* Rounded corners */
+  border: #e846cd 5px solid;
 }
 
 header{
@@ -104,6 +105,7 @@ img{
   width: 50%;
   height: auto;
   border-radius: 10px; /* Rounded corners */
+  border: #e846cd 5px solid;
   
 }
 
