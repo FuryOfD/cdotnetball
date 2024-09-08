@@ -201,18 +201,30 @@
           />
           <span id="emailLabel">Email</span>
         </label>
+        <div>
+          <label>I would like to sponsor in the form of:</label><br>
+          <label><input type="checkbox" id="donationAmount" name="donations" value="amount"> Donation Amount</label>
+          <div id="donationAmountInput" style="display: none;">
+            <label>Enter the amount:</label>
+            <input type="number" id="donationAmountValue" placeholder="Enter donation amount">
+          </div>
+          <br>
+          <label><input type="checkbox" id="donationEquipment" name="donations" value="equipment"> Equipment</label>
+          <div id="donationEquipmentInput" style="display: none;">
+            <label>Enter the equipment:</label>
+            <input type="text" id="donationEquipmentValue" placeholder="Enter equipment details">
+          </div>
+          <br>
+          <label><input type="checkbox" name="donations" value="prizes"> Prizes</label><br>
+          <label><input type="checkbox" name="donations" value="hampers"> Hampers</label><br>
+          <label><input type="checkbox" name="donations" value="water"> Water</label><br>
+          <label><input type="checkbox" name="donations" value="goodybags"> Goody Bags</label><br>
+          <label><input type="checkbox" name="donations" value="childsponser"> Sponsor a child in team development @ R350</label><br>
+          
+          
+        </div>
 
-        <label>I would like to sponsor in the form of:</label><br>
-        <label><input type="checkbox" name="donations" value="amount"> Donation Amount</label><br>
-        <label><input type="checkbox" name="donations" value="equipment"> Equipment</label><br>
-        <label><input type="checkbox" name="donations" value="prizes"> Prizes</label><br>
-        <label><input type="checkbox" name="donations" value="hampers"> Hampers</label><br>
-        <label><input type="checkbox" name="donations" value="water"> Water</label><br>
-        <label><input type="checkbox" name="donations" value="goodybags"> Goody Bags</label><br>
-        <label><input type="checkbox" name="donations" value="childsponser"> Sponsor a child in team development @ R350</label><br>
         
-        
-
         <button type="submit" class="submit">Submit</button>
         <p class="signin">This information will be stored in our database</p>
       </form>

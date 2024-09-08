@@ -103,6 +103,28 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
             }
         });
     });
+
+    // Listen for Donation Amount checkbox
+    document.getElementById('donationAmount').addEventListener('change', function() {
+        const donationAmountInput = document.getElementById('donationAmountInput');
+        if (this.checked) {
+            donationAmountInput.style.display = 'block';
+        } else {
+            donationAmountInput.style.display = 'none';
+        }
+    });
+
+    // Listen for Equipment checkbox
+    document.getElementById('donationEquipment').addEventListener('change', function() {
+        const donationEquipmentInput = document.getElementById('donationEquipmentInput');
+        if (this.checked) {
+            donationEquipmentInput.style.display = 'block';
+        } else {
+            donationEquipmentInput.style.display = 'none';
+        }
+    });
+
+
     
 
 
@@ -112,8 +134,26 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         // Capture form data
         const formData = new FormData(this);
 
+        event.preventDefault(); // Prevent form submission for testing
+
         const selectedDonations = Array.from(document.querySelectorAll('input[name="donations"]:checked'))
-        .map(checkbox => checkbox.value);
+          .map(checkbox => checkbox.value);
+
+        let donationDetails = {};
+        if (document.getElementById('donationAmount').checked) {
+            donationDetails.amount = document.getElementById('donationAmountValue').value;
+        }
+        if (document.getElementById('donationEquipment').checked) {
+            donationDetails.equipment = document.getElementById('donationEquipmentValue').value;
+        }
+
+        // You can now use the selectedDonations and donationDetails object in your POST request
+        console.log('Selected Donations:', selectedDonations);
+        console.log('Donation Details:', donationDetails);
+
+        donationsBoth = selectedDonations.concat(donationDetails);
+
+        // Continue with the form submission process here
     
     const data = {
         registrationType: document.getElementById('registrationType').value,
@@ -128,7 +168,8 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         contact1: document.getElementById('contact1').value,
         contact2: document.getElementById('contact2').value,
         email: document.getElementById('email').value,
-        donation: selectedDonations, // Use array of selected donations
+        donation: selectedDonations , // Use array of selected donations
+        donationDetails: donationDetails
     };
 
      // Get all player names if the registration type is "team"
