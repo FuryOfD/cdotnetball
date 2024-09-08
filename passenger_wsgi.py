@@ -52,7 +52,8 @@ def register():
                 # Write team registration details along with player names
                 writer.writerow([
                     'TEAM-' + data['teamName'], 
-                    data['teamCap'],             # Team name
+                    data['teamCap'], 
+                    player_names  ,# Team name
                     data['division'],            # Division
                     # data['firstname'],           # First name (of the person registering)
                     # data['lastname'],            # Last name (of the person registering)
@@ -61,8 +62,9 @@ def register():
                     data['contact1'],            # Contact 1
                     data['contact2'],            # Contact 2
                     data['email'],               # Email
-                    ', '.join(data['donation']), # Donations
-                    player_names                 # Team players (all player names)
+                    ', '.join(data['donation']), 
+                    data['donationDetails'], # Donations
+                                   # Team players (all player names)
                 ])
             else:
                 # Individual registration
@@ -75,7 +77,8 @@ def register():
                     data['contact1'],                        # Contact 1
                     data['contact2'],                        # Contact 2
                     data['email'],                           # Email
-                    ', '.join(data['donation'])              # Donations
+                    ', '.join(data['donation']) ,                        # Contact 2
+                    data['donationDetails'],              # Donations
                 ])
             return jsonify({'message': 'Registration successful'}), 200
     else:
