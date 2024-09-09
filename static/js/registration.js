@@ -124,6 +124,48 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         }
     });
 
+    // Listen for Prize checkbox
+    document.getElementById('donationPrize').addEventListener('change', function() {
+        const donationPrizeInput = document.getElementById('donationPrizeInput');
+        if (this.checked) {
+            donationPrizeInput.style.display = 'block';
+        } else {
+            donationPrizeInput.style.display = 'none';
+        }
+    });
+
+    // Listen for Hampers checkbox
+    document.getElementById('donationHampers').addEventListener('change', function() {
+        const donationHampersInput = document.getElementById('donationHampersInput');
+        if (this.checked) {
+            donationHampersInput.style.display = 'block';
+        } else {
+            donationHampersInput.style.display = 'none';
+        }
+    });
+
+    // Listen for Water checkbox
+    document.getElementById('donationWater').addEventListener('change', function() {
+        const donationWaterInput = document.getElementById('donationWaterInput');
+        if (this.checked) {
+            donationWaterInput.style.display = 'block';
+        } else {
+            donationWaterInput.style.display = 'none';
+        }
+    });
+
+    // Listen for Goodybags checkbox
+    document.getElementById('donationGoodybags').addEventListener('change', function() {
+        const donationGoodybagsInput = document.getElementById('donationGoodybagsInput');
+        if (this.checked) {
+            donationGoodybagsInput.style.display = 'block';
+        } else {
+            donationGoodybagsInput.style.display = 'none';
+        }
+    });
+
+
+
 
     
 
@@ -146,6 +188,19 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         if (document.getElementById('donationEquipment').checked) {
             donationDetails.equipment = document.getElementById('donationEquipmentValue').value;
         }
+        if (document.getElementById('donationPrize').checked) {
+            donationDetails.prize = document.getElementById('donationPrizeValue').value;
+        }
+        if (document.getElementById('donationHampers').checked) {
+            donationDetails.hampers = document.getElementById('donationHampersValue').value;
+        }
+        if (document.getElementById('donationWater').checked) {
+            donationDetails.water = document.getElementById('donationWaterValue').value;
+        }
+        if (document.getElementById('donationGoodybags').checked) {
+            donationDetails.goodbags = document.getElementById('donationGoodybagsValue').value;
+        }
+
 
         // You can now use the selectedDonations and donationDetails object in your POST request
         console.log('Selected Donations:', selectedDonations);
