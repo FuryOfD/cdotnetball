@@ -1,37 +1,38 @@
-html, body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
-    color: #063970;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html, body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+  color: #063970;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.break{
-    padding: 25px;
-    margin: 10px;
+/* General styling */
+.break {
+  padding: 25px;
+  margin: 10px;
 }
 
-.nostyle{
-    text-decoration: none;
-    color: inherit;
+.nostyle {
+  text-decoration: none;
+  color: inherit;
 }
 
-.nostyle2{
-    text-decoration: none;
-    color: #ffffff;
+.nostyle2 {
+  text-decoration: none;
+  color: #ffffff;
 }
 
-.nostyle3{
-    text-decoration: none;
-    color: #000000;
+.nostyle3 {
+  text-decoration: none;
+  color: #000000;
 }
 
-.nav{
+.nav {
   display: flex;
   flex-direction: row;
-  width: fit-content;
+  width: 100%;
   background-color: #e846cd;
   justify-content: center;
   border-radius: 10px; /* Rounded corners */
@@ -43,13 +44,13 @@ html, body{
 .value {
   background-color: #e846cd; /* Button background color */
   color: #063970;              /* Text color */
-  padding: 10px 20px;        /* Padding to make the button more visible */
-  border: none;              /* Removes default border */
-  font-size: 16px;           /* Ensures text is visible */
-  border-radius: 5px;        /* Rounded corners */
-  cursor: pointer; 
-    transition: all 0.2s ease;
-  }
+  padding: 10px 20px;          /* Padding to make the button more visible */
+  border: none;                /* Removes default border */
+  font-size: 16px;             /* Ensures text is visible */
+  border-radius: 5px;          /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
 .value:not(:active):hover,
 .value:focus {
@@ -80,32 +81,85 @@ html, body{
   opacity: 1;
 }
 
-footer{
+footer {
   text-align: center;
   padding: 10px;
   background-color: #063970;
   color: white;
 }
 
-footer img{
-  width : 50%;
+footer img {
+  width: 50%;
   height: 250px;
   border-radius: 10px; /* Rounded corners */
   border: #e846cd 5px solid;
 }
 
-header{
+header {
   text-align: center;
   padding: 10px;
   background-color: #063970;
   color: white;
 }
 
-img{
+img {
   width: 50%;
   height: auto;
   border-radius: 10px; /* Rounded corners */
   border: #e846cd 5px solid;
-  
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+      font-size: medium;
+  }
+
+  .nav {
+      flex-direction: column; /* Stack items vertically on small screens */
+      gap: 10px; /* Add some space between items */
+  }
+
+  .value {
+      padding: 8px 15px;
+      font-size: 14px;
+  }
+
+  footer img {
+      width: 80%; /* Make the footer image smaller on mobile */
+      height: auto; /* Maintain the aspect ratio */
+  }
+
+  header, footer {
+      padding: 20px;
+  }
+
+  img {
+      width: 90%; /* Adjust image size for mobile */
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+  body {
+      font-size: large;
+  }
+
+  .nav {
+      width: fit-content;
+      flex-direction: row; /* Keep it horizontal */
+  }
+
+  .value {
+      padding: 12px 30px;
+      font-size: 18px;
+  }
+
+  footer img {
+      width: 50%; /* Keep the footer image larger on desktop */
+  }
+
+  img {
+      width: 50%; /* Adjust the size of inline images on desktop */
+  }
+}
