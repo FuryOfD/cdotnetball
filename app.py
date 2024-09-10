@@ -42,7 +42,7 @@ def register():
         print(data)
 
         # Determine registration type and write to CSV accordingly
-        with open('registrations.csv', mode='a', newline='') as file:
+        with open('registrations.csv', mode='a', newline='', encoding="utf-8") as file:
             writer = csv.writer(file)
         
             if data['registrationType'] == 'team':
@@ -73,7 +73,8 @@ def register():
                     data['division'],                        # Division
                     # data['firstname'],                       # First name
                     # data['lastname'],                        # Last name
-                    data['isChild'],                         # Is child or not
+                    data['isChild'],   
+                    data['contactName'],# Is child or not
                     data['contact1'],                        # Contact 1
                     data['contact2'],                        # Contact 2
                     data['email'],                           # Email

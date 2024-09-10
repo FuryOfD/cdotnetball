@@ -1,6 +1,14 @@
 ﻿INDV/TEAM- Name,Team Cap,Additonal Players(TEAM),  Division,isChild, Contact Name, Contact Num, Alt Contact, Email, Donations, Donation Details
-﻿INDV/TEAM- Name,Team Cap,Additonal Players(TEAM),  Division,isChild, Contact Name, Contact Num, Alt Contact, Email, Donations, Donation Details
 INDIVIDUAL-Enzokuhle Ndlela ,U/10-U/16 FEMALES,yes,0671972399,0781156077,nomzamo.nkukhu@gmail.com,,{}
 INDIVIDUAL-Willow james ,U/10-U/16 FEMALES,yes,0832923584,0735273126,cjjwcarika@gmail.com,,{}
 INDIVIDUAL-Willow james ,U/10-U/16 FEMALES,yes,0832923584,0735273126,cjjwcarika@gmail.com,,{}
 "TEAM-Jan Celliers,Emma Grace Robertson ,""Leah Jacobs, Heidi Roos, Emma Grace Robertson, Elizabeth Brink, Luhandri Wilken, Rachel Dua, Nikita Greyvenstein, Isabella Louw"",U/10-U/16 FEMALES,yes,Addelein Jacobs,0825728069,0829247669,addelein.jacobs@yahoo.com,,{}"
+TEAM-Test - Do Not add ,Test team captain name and surname,"Test Player one , Test Player two",Premier League FEMALE,yes,Test parent name,0123456789,0123456789,test@email.com,"amount, equipment, prizes, hampers, water, goodybags, childsponser","{'amount': '30', 'equipment': 'Test Equipment', 'prize': 'Prize details', 'hampers': 'Hampers Details', 'water': 'Water details', 'goodbags': 'Goody bags details'}"
+TEAM-Foxies,Juanita van Niekerk,Mi-Janke van Niekerk,U/6-U/9,yes,Jenna van der Merwe,0790795825,0780785828,juanita@creativebugs.co.za,"prizes, childsponser",{}
+INDIVIDUAL-Laroche de Villiers,U/10-U/16 FEMALES,yes,0823216613,0846260957,idevilliers@deloitte.co.za,"amount, goodybags","{'amount': '200', 'goodbags': 'Anything'}"
+INDIVIDUAL-Nguni Dlodlo,U/10-U/16 FEMALES,yes,0765242624,0834742239,nonceba.dlodlo@yahoo.com,water,{'water': 'Pack of 24 '}
+INDIVIDUAL-Lente Potgieter ,U/6-U/9,yes,0836349992,0710027900,Yolandepotgieter.yp@gmail.com,,{}
+INDIVIDUAL-Lische Potgieter ,U/10-U/16 FEMALES,yes,0836349992,0710027900,Yolandepotgieter.yp@gmail.com,,{}
+TEAM-Test team,Test name,Test test,Premier League MIXED,yes,Test,012345678,07524,test@email.com,,{}
+INDIVIDUAL-Test,Premier League FEMALE,yes,0123456,0123456,test@gmail.com,,{}
+TEAM-C-Dot U9,Zoë Bell,"Zoë Bell, Minki Van Tonder, Kayla Jacobs, Hay-Lee Tompsett, Nienke Booysen, Danyell van Heerden, Thia van Doorsen",U/6-U/9,yes,Bell's Parents,0713372999,0839662819,coenvt@gmail.com,,{}

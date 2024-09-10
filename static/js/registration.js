@@ -97,6 +97,7 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
                 document.getElementById('contact1Label').textContent = "Contact Number";
                 document.getElementById('contact2Label').textContent = "Alternative Contact Number";
                 document.getElementById('emailLabel').textContent = "Email";
+                document.getElementById('contactNamelabel').textContent = "Name & Surname";
                 // document.getElementById('contact1').setAttribute('placeholder', "Contact");
                 // document.getElementById('contact2').setAttribute('placeholder', "Alterndddative Contact");
                 // document.getElementById('email').setAttribute('placeholder', "Email");
@@ -172,15 +173,11 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
 
     document.getElementById('registrationForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission
-
-        // Capture form data
-        const formData = new FormData(this);
-
-        event.preventDefault(); // Prevent form submission for testing
-
+    
+        // Capture form data for donations
         const selectedDonations = Array.from(document.querySelectorAll('input[name="donations"]:checked'))
-          .map(checkbox => checkbox.value);
-
+            .map(checkbox => checkbox.value);
+    
         let donationDetails = {};
         if (document.getElementById('donationAmount').checked) {
             donationDetails.amount = document.getElementById('donationAmountValue').value;
@@ -200,39 +197,72 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         if (document.getElementById('donationGoodybags').checked) {
             donationDetails.goodbags = document.getElementById('donationGoodybagsValue').value;
         }
-
-
-        // You can now use the selectedDonations and donationDetails object in your POST request
-        console.log('Selected Donations:', selectedDonations);
-        console.log('Donation Details:', donationDetails);
-
-        donationsBoth = selectedDonations.concat(donationDetails);
-
-        // Continue with the form submission process here
     
-    const data = {
-        registrationType: document.getElementById('registrationType').value,
-        individualName: document.getElementById('individualName').value,
-        teamName: document.getElementById('teamName').value,
-        teamCap : document.getElementById('teamCap').value,
-        // firstname: document.getElementById('firstname').value,
-        // lastname: document.getElementById('lastname').value,
-        division: document.getElementById('division').value,
-        isChild: document.querySelector('input[name="isChild"]:checked') ? document.querySelector('input[name="isChild"]:checked').value : null,
-        contactName: document.getElementById('contactName').value,
-        contact1: document.getElementById('contact1').value,
-        contact2: document.getElementById('contact2').value,
-        email: document.getElementById('email').value,
-        donation: selectedDonations , // Use array of selected donations
-        donationDetails: donationDetails
-    };
+        // Validation
+        const namePattern = /^[\p{L}\p{M}\p{Zs}.'-]+$/u;
+        
+        const isNameValid = namePattern.test(document.getElementById('individualName').value);
+        const isTeamNameValid = namePattern.test(document.getElementById('teamName').value);
+        const isTeamCapValid = namePattern.test(document.getElementById('teamCap').value);
+        const isContactNameValid = namePattern.test(document.getElementById('contactName').value);
+        const isTeamPlayersValid = Array.from(document.querySelectorAll('.team-player')).every(input => namePattern.test(input.value));
+    
+        const registrationType = document.getElementById('registrationType').value;
+        if (registrationType === 'team') {  
+            if (!isTeamNameValid) {
+                alert("Please enter a valid team name with only letters, spaces, hyphens, and apostrophes.");
+                return; // Stop submission
+            }
+        
+            if (!isTeamCapValid) {
+                alert("Please enter a valid team captain name with only letters, spaces, hyphens, and apostrophes.");
+                return; // Stop submission
+            }
+            if (!isTeamPlayersValid) {
+                alert("Please enter valid names for all team players.");
+                return; // Stop submission
+            }
+        }
+        else{
+            if (!isNameValid) {
+                alert("Please enter a valid individual name with only letters, spaces, hyphens, and apostrophes.");
+                return; // Stop submission
+            }
+            
+        }
 
-     // Get all player names if the registration type is "team"
-     if (data.registrationType === 'team') {
-        const playerNames = Array.from(document.querySelectorAll('.team-player')).map(input => input.value);
-        data.players = playerNames;
-    }
-
+        // Check for validation errors
+        
+    
+        if (!isContactNameValid) {
+            alert("Please enter a valid contact name with only letters, spaces, hyphens, and apostrophes.");
+            return; // Stop submission
+        }
+    
+        
+    
+        // If validation passes, continue with form data collection
+        const data = {
+            registrationType: document.getElementById('registrationType').value,
+            individualName: document.getElementById('individualName').value,
+            teamName: document.getElementById('teamName').value,
+            teamCap : document.getElementById('teamCap').value,
+            division: document.getElementById('division').value,
+            isChild: document.querySelector('input[name="isChild"]:checked') ? document.querySelector('input[name="isChild"]:checked').value : null,
+            contactName: document.getElementById('contactName').value,
+            contact1: document.getElementById('contact1').value,
+            contact2: document.getElementById('contact2').value,
+            email: document.getElementById('email').value,
+            donation: selectedDonations,
+            donationDetails: donationDetails
+        };
+    
+        // Get all player names if the registration type is "team"
+        if (data.registrationType === 'team') {
+            const playerNames = Array.from(document.querySelectorAll('.team-player')).map(input => input.value);
+            data.players = playerNames;
+        }
+    
         // Send data to backend via POST request
         fetch('/register', {
             method: 'POST',
@@ -249,7 +279,7 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
             console.error('Error:', error);
             alert('There was an error with your registration. Please try again.');
         });
-
     });
+    
 });
 
