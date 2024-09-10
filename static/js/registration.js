@@ -85,7 +85,7 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
                 document.getElementById('contact1Label').textContent = "Parent/Gaurdian's Contact";
                 document.getElementById('contact2Label').textContent = "Parent/Gaurdian's Alternative Contact";
                 document.getElementById('emailLabel').textContent = "Parent/Gaurdian's Email";
-                document.getElementById('contactNamelabel').textContent = "Parent/Gaurdian's Name & Surname";
+                document.getElementById('contactNamelabel').textContent = "Team Enroller's Full Name";
                 
                 // document.getElementById('contact1').setAttribute('placeholder', "Parent/Gaurdian's Contact");
                 // document.getElementById('contact2').setAttribute('placeholder', "Parent/Gaurdian's Alternative Contact");
@@ -228,7 +228,7 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
                 alert("Please enter a valid individual name with only letters, spaces, hyphens, and apostrophes.");
                 return; // Stop submission
             }
-            
+
         }
 
         // Check for validation errors
