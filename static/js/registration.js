@@ -199,7 +199,9 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         }
     
         // Validation
-        const namePattern = /^[\p{L}\p{M}\p{Zs}.'-]+$/u;
+        const namePattern = /^[\p{L}\p{Zs}.'-]+$/u;
+        //const namePattern = /^[\p{L}\p{M}\p{Zs}.'-]+$/u;
+
         
         const isNameValid = namePattern.test(document.getElementById('individualName').value);
         const isTeamNameValid = namePattern.test(document.getElementById('teamName').value);
