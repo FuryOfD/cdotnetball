@@ -199,8 +199,9 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         }
     
         // Validation
-        const namePattern = /^[\p{L}\p{Zs}.'-]+$/u;
+       // const namePattern = /^[\p{L}\p{Zs}.'-]+$/u;
         //const namePattern = /^[\p{L}\p{M}\p{Zs}.'-]+$/u;
+        const namePattern = /^.+$/;  //allows for all characters
 
         
         const isNameValid = namePattern.test(document.getElementById('individualName').value);
