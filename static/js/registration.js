@@ -241,9 +241,7 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
             alert("Please enter a valid contact name with only letters, spaces, hyphens, and apostrophes.");
             return; // Stop submission
         }
-    
-        
-    
+
         // If validation passes, continue with form data collection
         const data = {
             registrationType: document.getElementById('registrationType').value,
@@ -264,6 +262,47 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
         if (data.registrationType === 'team') {
             const playerNames = Array.from(document.querySelectorAll('.team-player')).map(input => input.value);
             data.players = playerNames;
+        }
+
+         //if no data entered, replace with N/A in data
+        if(data.individualName === ""){
+            data.individualName = "N/A";
+        }
+        if(data.teamName === ""){
+            data.teamName = "N/A";
+        }
+        if(data.teamCap === ""){
+            data.teamCap = "N/A";
+        }
+        if(data.contactName === ""){
+            data.contactName = "N/A";
+        }
+        if(data.contact1 === ""){
+            data.contact1 = "N/A";
+        }
+        if(data.contact2 === ""){
+            data.contact2 = "N/A";
+        }
+        if(data.email === ""){
+            data.email = "N/A";
+        }
+        if(data.donation === ""){
+            data.donation = "{}";
+        }
+        if(data.donationDetails === ""){
+            data.donationDetails = "{}";
+        }
+        if(data.players === ""){
+            data.players = "N/A";
+        }
+        if(data.isChild === ""){
+            data.isChild = "N/A";
+        }
+        if(data.division === ""){
+            data.division = "N/A";
+        }
+        if(data.registrationType === ""){
+            data.registrationType = "N/A";
         }
     
         // Send data to backend via POST request
