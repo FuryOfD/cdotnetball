@@ -40,56 +40,56 @@ def info_page():
 
 @application.route('/register', methods=['POST'])
 def register():
-    if request.is_json:
-        data = request.get_json()  # Get the JSON data from the POST request
+    try:
+        if request.is_json:
+            data = request.get_json()  # Get the JSON data from the POST request
 
-        # Print the data for debugging
-        print(data)
+            # Print the data for debugging
+            print(data)
 
-        # Determine registration type and write to CSV accordingly
-        with open('registrations.csv', mode='a', newline='', encoding="utf-8") as file:
-            writer = csv.writer(file)
-        
-            if data['registrationType'] == 'team':
-                # Join the player names into a single string
-                player_names = ', '.join(data.get('players', []))
-            
-                # Write team registration details along with player names
-                writer.writerow([
-                    'TEAM-' + data['teamName'], 
-                    data['teamCap'], 
-                    player_names  ,# Team name
-                    data['division'],            # Division
-                    # data['firstname'],           # First name (of the person registering)
-                    # data['lastname'],            # Last name (of the person registering)
-                    data['isChild'],  
-                    data['contactName'], # Is child or not
-                    data['contact1'],            # Contact 1
-                    data['contact2'],            # Contact 2
-                    data['email'],               # Email
-                    ', '.join(data['donation']), 
-                    data['donationDetails'], # Donations
-                                   # Team players (all player names)
-                ])
-            else:
-                # Individual registration
-                writer.writerow([
-                    'INDIVIDUAL-' + data['individualName'],  # Individual name
-                    data['division'],                        # Division
-                    # data['firstname'],                       # First name
-                    # data['lastname'],                        # Last name
-                    data['isChild'],   
-                    data['contactName'],# Is child or not
-                    data['contact1'],                        # Contact 1
-                    data['contact2'],                        # Contact 2
-                    data['email'],                           # Email
-                    ', '.join(data['donation']) ,                        # Contact 2
-                    data['donationDetails'],              # Donations
-                ])
-            return jsonify({'message': 'Registration successful'}), 200
-    else:
-        return jsonify({'message': 'Invalid content type'}), 415  # 415 Unsupported Media Type
+            # Determine registration type and write to CSV accordingly
+            with open('registrations.csv', mode='a', newline='', encoding="utf-8") as file:
+                writer = csv.writer(file)
 
+                if data['registrationType'] == 'team':
+                    # Join the player names into a single string
+                    player_names = ', '.join(data.get('players', []))
+
+                    # Write team registration details along with player names
+                    writer.writerow([
+                        'TEAM-' + data['teamName'],
+                        data['teamCap'],
+                        player_names,  # Team name
+                        data['division'],            # Division
+                        data['isChild'],  
+                        data['contactName'], # Is child or not
+                        data['contact1'],            # Contact 1
+                        data['contact2'],            # Contact 2
+                        data['email'],               # Email
+                        ', '.join(data['donation']),
+                        data['donationDetails'], # Donations
+                    ])
+                else:
+                    # Individual registration
+                    writer.writerow([
+                        'INDIVIDUAL-' + data['individualName'],  # Individual name
+                        data['division'],                        # Division
+                        data['isChild'],   
+                        data['contactName'],# Is child or not
+                        data['contact1'],                        # Contact 1
+                        data['contact2'],                        # Contact 2
+                        data['email'],                           # Email
+                        ', '.join(data['donation']),
+                        data['donationDetails'],              # Donations
+                    ])
+                return jsonify({'message': 'Registration successful'}), 200
+        else:
+            return jsonify({'message': 'Invalid content type'}), 415  # 415 Unsupported Media Type
+    except Exception as e:
+        # Log the error
+        print(f"Error: {e}", file=sys.stderr)
+        return jsonify({'message': 'An error occurred', 'error': str(e)}), 500
+    
 if __name__ == '__main__':
     # Use the WSGI application for development when running directly
     application.run(debug=True)

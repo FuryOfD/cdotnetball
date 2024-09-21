@@ -313,7 +313,15 @@ document.getElementById('removePlayerBtn').addEventListener('click', function() 
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+               return response.json().then(errorData => {
+                    throw new Error(errorData.message || 'Server error');
+               });
+            }
+            return response.json();
+           
+        })
         .then(result => {
             window.location.href = "confirmation"; // Redirect to confirmation page
         })
