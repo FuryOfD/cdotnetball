@@ -5,10 +5,10 @@ import sys
 
 application = Flask(__name__)
 
-# @application.after_request
-# def set_charset(response):
-#     response.headers["Content-Type"] = "text/html; charset=utf-8"
-#     return response
+@application.after_request
+def set_charset(response):
+    response.headers["Content-Type"] = "text/html; charset=utf-8"
+    return response
 
 @application.route('/')
 def index():
