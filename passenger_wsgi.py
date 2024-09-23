@@ -6,11 +6,12 @@ import sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
-application = Flask(__name__)
+application = Flask(__name__, static_folder='static', static_url_path='/static')
 
 @application.after_request
 def set_charset(response):
-    response.headers["Content-Type"] = "text/html; charset=utf-8"
+    if response.content_type.startswith('text/html'):
+        response.headers["Content-Type"] = "text/html; charset=utf-8"
     return response
 
 @application.route('/')
