@@ -1,1 +1,4 @@
 AddDefaultCharset UTF-8
+
+# Enable UTF-8 encoding for any text files
+AddCharset UTF-8 .html .css .js .csv .txt

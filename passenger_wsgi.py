@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 import csv
-import os
+import io
 import sys
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 application = Flask(__name__)
 
